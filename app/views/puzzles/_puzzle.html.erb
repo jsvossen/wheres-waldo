@@ -1,0 +1,11 @@
+<div id="puzzle-<%= puzzle.id %>" class="puzzle <%= puzzle.difficulty %>">
+	<%= link_to(puzzle) do
+		image_tag(puzzle.tmb_img, alt: puzzle.title+" - "+puzzle.difficulty)
+	end %>
+	<p class="info">
+		<%= link_to(puzzle) do %>
+			<span class="title"><%= puzzle.title %></span>
+			<span class="diff"><%= puzzle.difficulty %></span>
+		<% end %>
+	</p>
+</div>
