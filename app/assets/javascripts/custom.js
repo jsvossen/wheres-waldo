@@ -18,7 +18,7 @@ var puzzle = (function(){
 		$('.select .opt').click(function(e){
 			e.preventDefault();
 			$.get({
-			  url: '/find.json',
+			  url: '/find',
 			  data: { cid: $(this).attr('data-cid'), x: clickX, y: clickY },
 			  dataType: 'json'
 			}).done(function(result){
