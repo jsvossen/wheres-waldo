@@ -22,10 +22,10 @@ var puzzle = (function(){
 			  data: { cid: $(this).attr('data-cid'), x: clickX, y: clickY },
 			  dataType: 'json'
 			}).done(function(result){
-			  	if (result == "false") {
-			  		//showMessage("Nope! Try again.");
+			  	if (result == false) {
+			  		showMessage("Nope! Try again.");
 			  	} else {
-			  		//showMessage("You found "+result.name+"!");
+			  		showMessage("You found "+result.name+"!");
 			  		flagAsFound(result);
 			  	}
 			  	$('.select').hide();
@@ -37,12 +37,18 @@ var puzzle = (function(){
 		var boxX = ( (clickX + $('.select').width()) > $('#board').width() ) ? ($('#board').width()-$('.select').width()) : clickX;
 		var boxY = ( (clickY + $('.select').height()) > $('#board').height() ) ? ($('#board').height()-$('.select').height()) : clickY;
 		$('.select').css({top: boxY, left: boxX }).fadeIn('fast');
+		$('.msg').hide();
 	}
 
 	function flagAsFound(result) {
 		$('[data-cid='+result.cid+']').addClass('found');
 		var position = 'top: '+result.y+'px; left: '+result.x+'px; width: '+result.width+'px; height: '+result.height+'px;';
 		$('#board').prepend('<div class="flag" style="'+position+'"></div>');
+	}
+
+	function showMessage(message) {
+		$('.msg span').text(message);
+		$('.msg').fadeIn('fast');
 	}
 
 	return {

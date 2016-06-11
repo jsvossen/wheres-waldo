@@ -65,6 +65,17 @@ p { margin: 0; }
     @include box_sizing;
   }
 
+  .msg {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    padding: 5px 10px;
+    background: #fff;
+    border: 2px solid #b21834;
+    border-radius: 5px;    
+  }
+
   .select {
     display: none;
     position: absolute;
