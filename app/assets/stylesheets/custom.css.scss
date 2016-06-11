@@ -53,6 +53,7 @@ p { margin: 0; }
   float: left;
   width: 885px;
   position: relative;
+
   .prompt {
     position: absolute;
     top: 0;
@@ -63,12 +64,40 @@ p { margin: 0; }
     font-size: 18px;
     @include box_sizing;
   }
+
+  .select {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #b21834;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.75);
+    width: 130px;
+    h3 {
+      border-radius: 4px 4px 0 0;
+      background: #b21834;
+      color: #fff;
+      padding: 2px 5px;
+      margin: 0;
+      font-size: 16px;
+    }
+    .opt {
+      display: block;
+      padding: 2px 5px;
+      text-decoration: none;
+      color: #000;
+      &:hover { background: #eee; }
+      &:last-child { border-radius: 0 0 4px 4px; }
+    }
+  }
 }
 
 .close { 
   font-weight: bold;
   text-decoration: none;
   float: right;
+  color: inherit;
+  margin-left: 10px;
 }
 
 /*TARGET LIST*/
