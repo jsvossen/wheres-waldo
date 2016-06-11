@@ -1,18 +1,20 @@
-$(document).ready(function(){
+var puzzle = (function(){
 
 	var clickX;
 	var clickY;
 
-	$('a.close').click(function(e){
-		e.preventDefault();
-		$(this).closest(".popup").fadeOut('fast');
-	});
+	function initListeners() {
+		$('a.close').click(function(e){
+			e.preventDefault();
+			$(this).closest(".popup").fadeOut('fast');
+		});
 
-	$('#board > img').click(function(e) {
-		clickX = e.pageX - $(this).offset().left;
-	    clickY = e.pageY - $(this).offset().top;
-	    showSelect();
-	});
+		$('#board > img').click(function(e) {
+			clickX = e.pageX - $(this).offset().left;
+		    clickY = e.pageY - $(this).offset().top;
+		    showSelect();
+		});
+	}
 
 	function showSelect() {
 		var boxX = ( (clickX + $('.select').width()) > $('#board').width() ) ? ($('#board').width()-$('.select').width()) : clickX;
@@ -20,4 +22,10 @@ $(document).ready(function(){
 		$('.select').css({top: boxY, left: boxX }).fadeIn('fast');
 	}
 
-});
+	return {
+		initListeners: initListeners
+	}
+
+})(jQuery)
+
+$(puzzle.initListeners)
