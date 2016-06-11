@@ -1,1 +1,8 @@
-<%= image_tag(@puzzle.full_img, alt: @puzzle.title+" - "+@puzzle.difficulty) %>
+
+<div id="board">
+	<%= image_tag(@puzzle.full_img, alt: @puzzle.title+" - "+@puzzle.difficulty) %>
+</div>
+<div id="targets">
+	<h2>To Find:</h2>
+	<%= render @targets %>
+</div>
