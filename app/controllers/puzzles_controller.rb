@@ -9,4 +9,14 @@ class PuzzlesController < ApplicationController
 		@targets = @puzzle.targets
 	end
 
+	def find_character
+		@char = Target.find(params[:cid])
+		puts (@char.is_at_coord?(params[:x],params[:y]))
+		if @char.is_at_coord?(params[:x],params[:y])
+			render json: @char.position_data
+		else
+			render json: "false"
+		end
+	end
+
 end

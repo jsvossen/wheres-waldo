@@ -14,6 +14,17 @@ var puzzle = (function(){
 		    clickY = e.pageY - $(this).offset().top;
 		    showSelect();
 		});
+
+		$('.select .opt').click(function(e){
+			e.preventDefault();
+			$.get({
+			  url: '/find.json',
+			  data: { cid: $(this).attr('data-cid'), x: clickX, y: clickY },
+			  dataType: 'json'
+			}).done(function(data){
+			  	console.log(data);
+			 });
+		});
 	}
 
 	function showSelect() {
