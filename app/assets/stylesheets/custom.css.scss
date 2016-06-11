@@ -1,0 +1,88 @@
+/*GLOBAL*/
+
+body {
+  font-family: Helvetica, sans-serf;
+}
+
+img { max-width: 100%; }
+
+h1 { text-align: center; }
+
+p { margin: 0; }
+
+.container {
+  width: 1024px;
+  margin: auto;
+}
+
+/*INDEX*/
+
+.puzzle {
+  display: inline-block;
+  border: 1px solid #b21834;
+  img { display: block; border-radius: 4px 4px 0 0; }
+  border-radius: 5px;
+}
+
+.info {
+  a {
+    display: block;
+    text-decoration: none;
+    background: #b21834;
+    color: #fff;
+    padding: 5px 10px;
+    border-raidus: 0 0 4px 4px; 
+  }
+  .diff { float: right; font-style: italic; }
+}
+
+
+/*PUZZLE*/
+
+#board {
+  float: left;
+  width: 885px;
+  position: relative;
+}
+
+/*TARGET LIST*/
+
+#targets {
+  float: left;
+  margin-left: 20px;
+  text-align: center;
+
+  img {
+    height: 150px;
+    margin: 3px;
+  }
+
+  .target {
+    width: 100px;
+    margin-bottom: 10px;
+    border: 1px solid #b21834;
+    border-radius: 5px;
+
+    .name {
+      background: #b21834;
+      color: #fff;
+      padding: 2px;
+      border-radius: 0 0 4px 4px;
+    }
+
+    &.found {
+      border-color: #ccc;
+      img { opacity: 0.5; } 
+      .name { 
+        background: #ccc; 
+        &:before {
+          content: "\2713";
+          color: green;
+          float: left;
+           margin-left: 5px;
+           margin-right: -15px;
+        }
+      }
+    }
+  }
+}
