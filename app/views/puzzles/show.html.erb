@@ -1,5 +1,10 @@
 
 <div id="board">
+	<p class="prompt">
+		<strong><%= @puzzle.title %> (<%= @puzzle.difficulty %>)</strong>
+		- Click on the image below to tag a character.
+		<a href="#" class="close">&times;</a>
+	</p>
 	<%= image_tag(@puzzle.full_img, alt: @puzzle.title+" - "+@puzzle.difficulty) %>
 </div>
 <div id="targets">
