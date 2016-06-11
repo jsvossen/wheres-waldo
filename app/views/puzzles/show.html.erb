@@ -9,7 +9,7 @@
 	<div class="select popup">
 		<h3>Who is this? <a href="#" class="close">&times;</a></h3>
 		<% @targets.each do |t| %>
-			<a href="#" class="<%= t.name.downcase %> opt"><%= t.name %></a>
+			<a href="#" class="opt" data-cid=<%= t.id %>><%= t.name %></a>
 		<% end %>
 	</div>
 
