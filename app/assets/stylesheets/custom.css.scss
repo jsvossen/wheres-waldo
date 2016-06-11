@@ -88,6 +88,7 @@ p { margin: 0; }
       color: #000;
       &:hover { background: #eee; }
       &:last-child { border-radius: 0 0 4px 4px; }
+      &.found { display: none; }
     }
   }
 }
@@ -98,6 +99,14 @@ p { margin: 0; }
   float: right;
   color: inherit;
   margin-left: 10px;
+}
+
+.flag {
+  background: rgba(255, 255, 255, 0.33);
+  position: absolute;
+  border: 3px solid red;
+  border-radius: 100%;
+  box-shadow: 0 0 5px #000;
 }
 
 /*TARGET LIST*/
