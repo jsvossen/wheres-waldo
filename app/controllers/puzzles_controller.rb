@@ -13,9 +13,9 @@ class PuzzlesController < ApplicationController
 	def find_character
 		@char = Target.find(params[:cid])
 		if @char.is_at_coord?(params[:x],params[:y])
-			render json: @char.position_data
 			session[:to_find].delete(@char.id)
-			get_score if solved?
+			session[:score] = Time.now - session[:start_time].to_time if solved?
+			render json: { c: @char.position_data, score: session[:score] }
 		else
 			render json: "false"
 		end
@@ -24,15 +24,11 @@ class PuzzlesController < ApplicationController
 	def start_puzzle
 		session[:to_find] = @puzzle.targets.map(&:id)
 		session[:start_time] = Time.now
+		session[:score] = false
 	end
 
 	def solved?
 		session[:to_find].empty?
-	end
-
-	def get_score
-		session[:finish_time] = Time.now
-		puts session[:finish_time].to_time - session[:start_time].to_time
 	end
 
 end

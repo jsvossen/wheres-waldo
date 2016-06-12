@@ -25,8 +25,9 @@ var puzzle = (function(){
 			  	if (result == false) {
 			  		showMessage("Nope! Try again.");
 			  	} else {
-			  		showMessage("You found "+result.name+"!");
-			  		flagAsFound(result);
+			  		showMessage("You found "+result.c.name+"!");
+			  		flagAsFound(result.c);
+			  		if (result.score) showScore(result.score);
 			  	}
 			  	$('.select').hide();
 			 });
@@ -49,6 +50,14 @@ var puzzle = (function(){
 	function showMessage(message) {
 		$('.msg span').text(message);
 		$('.msg').fadeIn('fast');
+	}
+
+	function showScore(score) {
+		$('.popup').hide();
+		var box = '<div id="score">'
+			box += '<h2>Success!</h2>'
+			box += '<p>Your time: '+score.toFixed(2)+' seconds.</p></div>'
+		$(box).prependTo('#board').fadeIn('fast');
 	}
 
 	return {

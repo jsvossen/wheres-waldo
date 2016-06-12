@@ -161,3 +161,21 @@ p { margin: 0; }
     }
   }
 }
+
+/*SCORE BOX*/
+
+#score {
+  position: absolute;
+  width: 400px;
+  padding: 30px;
+  background: #fff;
+  border: 2px solid #b21834;
+  border-radius: 10px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 200px;
+  z-index: 10;
+  h2 { margin-top: 0; }
+}
