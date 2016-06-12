@@ -49,7 +49,7 @@ var puzzle = (function(){
 
 	function showMessage(message) {
 		$('.msg span').text(message);
-		$('.msg').fadeIn('fast');
+		$('.msg').css({top: clickY+50, left: clickX }).fadeIn('fast');
 	}
 
 	function showScore(score) {
@@ -57,7 +57,7 @@ var puzzle = (function(){
 		var box = '<div id="score">'
 			box += '<h2>Success!</h2>'
 			box += '<p>Your time: '+score.toFixed(2)+' seconds.</p></div>'
-		$(box).prependTo('#board').fadeIn('fast');
+		$(box).prependTo('#board').hide().fadeIn('fast');
 	}
 
 	return {
