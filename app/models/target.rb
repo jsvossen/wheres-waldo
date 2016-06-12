@@ -1,6 +1,10 @@
 class Target < ActiveRecord::Base
 	belongs_to :puzzle
 
+	def image
+		"targets/#{self.name.downcase}.jpg"
+	end
+
 	def is_at_coord?(x,y)
 		x = x.to_i
 		y = y.to_i

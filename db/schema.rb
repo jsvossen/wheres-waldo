@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608144115) do
+ActiveRecord::Schema.define(version: 20160612154855) do
 
   create_table "puzzles", force: :cascade do |t|
     t.string   "image",      null: false
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20160608144115) do
   end
 
   create_table "targets", force: :cascade do |t|
-    t.string   "image",      null: false
     t.string   "name",       null: false
     t.integer  "width",      null: false
     t.integer  "height",     null: false
