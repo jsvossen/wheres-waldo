@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160612154855) do
+ActiveRecord::Schema.define(version: 20160614201444) do
 
   create_table "puzzles", force: :cascade do |t|
     t.string   "image",      null: false
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20160612154855) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "scores", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "puzzle_id",                          null: false
+    t.decimal  "seconds",    precision: 6, scale: 1, null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "scores", ["puzzle_id"], name: "index_scores_on_puzzle_id"
 
   create_table "targets", force: :cascade do |t|
     t.string   "name",       null: false

@@ -1,6 +1,6 @@
 class Puzzle < ActiveRecord::Base
 	has_many :targets
-
+	has_many :scores
 
 	def full_img
 		"puzzles/"+image
