@@ -10,4 +10,16 @@ class Puzzle < ActiveRecord::Base
 		"puzzles/tmb/"+image
 	end
 
+	def high_score
+		self.scores.minimum(:seconds)
+	end
+
+	def is_high_score?(score)
+		if self.high_score
+			score <= self.high_score
+		else
+			true
+		end
+	end
+
 end

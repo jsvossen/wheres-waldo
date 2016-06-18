@@ -58,6 +58,12 @@ var puzzle = (function(){
 			box += '<h2>Success!</h2>'
 			box += '<p>Your time: '+score.toFixed(2)+' seconds.</p></div>'
 		$(box).prependTo('#board').hide().fadeIn('fast');
+		var pid = window.location.pathname.split("/").pop()
+		$.get({
+			url: '/post_score',
+			data: { id: pid },
+			dataType: 'script'
+		});
 	}
 
 	return {

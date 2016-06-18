@@ -1,0 +1,6 @@
+<h2>New high score! <%= session[:score] %> seconds</h2>
+<p>Enter your name for the hall of fame:</p>
+<%= form_for [@puzzle, @score] do |f| %>
+	<%= f.text_field :name %>
+	<%= f.submit "Save Score" %>
+<% end %>
