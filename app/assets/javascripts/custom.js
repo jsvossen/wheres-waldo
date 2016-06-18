@@ -54,10 +54,7 @@ var puzzle = (function(){
 
 	function showScore(score) {
 		$('.popup').hide();
-		var box = '<div id="score">'
-			box += '<h2>Success!</h2>'
-			box += '<p>Your time: '+score.toFixed(2)+' seconds.</p></div>'
-		$(box).prependTo('#board').hide().fadeIn('fast');
+		$('<div id="score"></div>').prependTo('#board').hide().fadeIn('fast');
 		var pid = window.location.pathname.split("/").pop()
 		$.get({
 			url: '/post_score',

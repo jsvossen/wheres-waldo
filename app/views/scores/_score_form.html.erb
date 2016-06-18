@@ -4,3 +4,7 @@
 	<%= f.text_field :name %>
 	<%= f.submit "Save Score" %>
 <% end %>
+<p class="nav-links">
+	<%= link_to "< Home", root_path, class: "fleft" %>
+	<%= link_to "High Scores >", puzzle_scores_path(@puzzle), class: "fright" %>
+</p>

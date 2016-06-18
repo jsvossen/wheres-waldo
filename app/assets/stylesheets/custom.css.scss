@@ -203,7 +203,12 @@ a { color: #b21834; }
   top: 200px;
   z-index: 10;
   h2 { margin-top: 0; }
-  p { margin: 15px; }
+  p { margin: 15px 0; }
+
+  .nav-links {
+    margin-bottom: 0;
+    font-size: 12px;
+  }
 }
 
 

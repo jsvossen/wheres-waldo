@@ -24,11 +24,9 @@ class ScoresController < ApplicationController
 		if @puzzle.is_high_score?(session[:score])
 			session[:name] ||= "Anonymous"
 			@score = @puzzle.scores.build(name: session[:name], seconds: session[:score])
-			respond_to do |format|
-		        format.js
-		    end
+			render 'post_score'
 		else
-			render :nothing => true
+			render 'show_score'
 		end
 	end
 
