@@ -2,7 +2,8 @@ class ScoresController < ApplicationController
 
 
 	def index
-		@scores = Puzzle.find(params[:id]).scores
+		@puzzle = Puzzle.find(params[:puzzle_id])
+		@scores = @puzzle.scores.by_best_time
 	end
 
 	def create
@@ -11,17 +12,15 @@ class ScoresController < ApplicationController
 		@score.update_attributes(seconds: session[:score])
 		if @score.save
 			session[:name] = @score.name
-			puts "score created!"
-			puts @score
+			redirect_to puzzle_scores_path(@puzzle)
 		else
-			errors = @score.errors.full_messages.join(". ")
-			puts "Error: #{errors}"
+			flash[:danger] = @score.errors.full_messages.join(". ")
+			redirect_to puzzle_scores_path(@puzzle)
 		end
 	end
 
 	def post_score
 		@puzzle = Puzzle.find(params[:id])
-		puts @puzzle.is_high_score?(session[:score])
 		if @puzzle.is_high_score?(session[:score])
 			session[:name] ||= "Anonymous"
 			@score = @puzzle.scores.build(name: session[:name], seconds: session[:score])

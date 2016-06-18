@@ -15,7 +15,7 @@ body {
 
 img { max-width: 100%; }
 
-h1 { text-align: center; }
+h1, h2 { text-align: center; }
 
 p { margin: 0; }
 
@@ -179,3 +179,16 @@ p { margin: 0; }
   z-index: 10;
   h2 { margin-top: 0; }
 }
+
+
+/* HIGH SCORES */
+
+table { width: 500px; margin: auto; border: 1px solid #b21834; border-collapse: collapse; }
+th, td { padding: 8px 12px; }
+
+thead { color: #fff; background: #b21834; }
+
+tr.even { background: #eee; }
+
+td.sname, th.sname { text-align: left; }
+td.stime, th.stime { text-align: center; }
