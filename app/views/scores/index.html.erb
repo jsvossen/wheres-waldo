@@ -1,18 +1,22 @@
 <h1>High Scores</h1>
 <h2><%= @puzzle.title %> (<%= @puzzle.difficulty %>)</h2>
-<% if @scores.any? %>
-<table>
-	<thead>
-		<tr>
-			<th class="sname">Name</th>
-			<th class="stime">Seconds</th>
-		</tr>
-	</thead>
-	<tbody>
-		<%= render @scores %>
-	</tbody>
-</table>
 
+<p class="nav-links">
+	<%= link_to "< Home", root_path, class: "fleft" %>
+	<%= link_to "Play >", @puzzle, class: "fright" %>
+</p>
+<% if @scores.any? %>
+	<table>
+		<thead>
+			<tr>
+				<th class="sname">Name</th>
+				<th class="stime">Seconds</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render @scores %>
+		</tbody>
+	</table>
 <% else %>
-	<p style="text-align: center">No scores yet! <%= link_to "Play >", @puzzle %></p>
+	<p style="text-align: center">No scores yet!</p>
 <% end %>

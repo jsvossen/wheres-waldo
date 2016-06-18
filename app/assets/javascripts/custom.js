@@ -37,7 +37,7 @@ var puzzle = (function(){
 	function showSelect() {
 		var boxX = ( (clickX + $('.select').width()) > $('#board').width() ) ? ($('#board').width()-$('.select').width()) : clickX;
 		var boxY = ( (clickY + $('.select').height()) > $('#board').height() ) ? ($('#board').height()-$('.select').height()) : clickY;
-		$('.select').css({top: boxY, left: boxX }).fadeIn('fast');
+		$('.select').css({top: boxY, left: boxX }).show();
 		$('.msg').hide();
 	}
 

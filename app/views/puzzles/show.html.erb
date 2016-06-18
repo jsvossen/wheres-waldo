@@ -22,6 +22,8 @@
 </div>
 
 <div id="targets">
+	<p class="nav-links"><%= link_to "< Home", root_path %></p>
 	<h2>To Find:</h2>
 	<%= render @targets %>
+	<p class="nav-links"><%= link_to "High Scores >", puzzle_scores_path(@puzzle) %></p>
 </div>
