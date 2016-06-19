@@ -1,0 +1,334 @@
+/*MIXINS*/
+/*GLOBAL*/
+/* line 13, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+body {
+  font-family: Helvetica, sans-serf;
+}
+
+/* line 17, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 19, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+h1, h2 {
+  text-align: center;
+}
+
+/* line 21, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+p {
+  margin: 0;
+}
+
+/* line 23, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+a {
+  color: #b21834;
+}
+
+/* line 25, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.container {
+  width: 1124px;
+  margin: auto;
+}
+
+/* line 30, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.nav-links {
+  max-width: 500px;
+  margin: 15px auto;
+}
+/* line 33, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.nav-links:after {
+  content: " ";
+  height: 0;
+  display: block;
+  clear: both;
+}
+
+/* line 41, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.fleft {
+  float: left;
+}
+
+/* line 42, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.fright {
+  float: right;
+}
+
+/*INDEX*/
+/* line 47, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.puzzle-list {
+  text-align: center;
+  min-height: 400px;
+}
+
+/* line 49, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.puzzle {
+  display: inline-block;
+  margin: 10px;
+}
+/* line 51, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.puzzle img {
+  display: block;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #b21834;
+}
+
+/* line 56, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.info a {
+  display: block;
+  text-decoration: none;
+  background: #b21834;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #b21834;
+  text-align: left;
+}
+/* line 66, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.info .diff {
+  float: right;
+  font-style: italic;
+}
+
+/* line 69, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.score-link {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/*PUZZLE*/
+/* line 78, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#board {
+  float: left;
+  width: 1000px;
+  position: relative;
+}
+/* line 83, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#board .prompt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 10px 15px;
+  font-size: 18px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 94, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#board .msg {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  padding: 5px 10px;
+  background: #fff;
+  border: 2px solid #b21834;
+  border-radius: 5px;
+}
+/* line 105, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#board .select {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #b21834;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+  width: 130px;
+}
+/* line 113, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#board .select h3 {
+  border-radius: 4px 4px 0 0;
+  background: #b21834;
+  color: #fff;
+  padding: 2px 5px;
+  margin: 0;
+  font-size: 16px;
+}
+/* line 121, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#board .select .opt {
+  display: block;
+  padding: 2px 5px;
+  text-decoration: none;
+  color: #000;
+}
+/* line 126, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#board .select .opt:hover {
+  background: #eee;
+}
+/* line 127, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#board .select .opt:last-child {
+  border-radius: 0 0 4px 4px;
+}
+/* line 128, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#board .select .opt.found {
+  display: none;
+}
+
+/* line 133, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.close {
+  font-weight: bold;
+  text-decoration: none;
+  float: right;
+  color: inherit;
+  margin-left: 10px;
+}
+
+/* line 141, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+.flag {
+  background: rgba(255, 255, 255, 0.33);
+  position: absolute;
+  border: 3px solid red;
+  border-radius: 100%;
+  box-shadow: 0 0 5px #000;
+}
+
+/*TARGET LIST*/
+/* line 151, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#targets {
+  float: left;
+  margin-left: 20px;
+  text-align: center;
+}
+/* line 155, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#targets h2 {
+  margin: 10px 0;
+}
+/* line 156, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#targets img {
+  height: 116px;
+  margin: 3px;
+}
+/* line 161, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#targets .target {
+  width: 100px;
+  margin-bottom: 10px;
+  border: 1px solid #b21834;
+  border-radius: 5px;
+}
+/* line 167, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#targets .target .name {
+  background: #b21834;
+  color: #fff;
+  padding: 2px;
+  border-radius: 0 0 4px 4px;
+}
+/* line 174, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#targets .target.found {
+  border-color: #ccc;
+}
+/* line 176, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#targets .target.found img {
+  opacity: 0.5;
+}
+/* line 177, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#targets .target.found .name {
+  background: #ccc;
+}
+/* line 179, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#targets .target.found .name:before {
+  content: "\2713";
+  color: green;
+  float: left;
+  margin-left: 5px;
+  margin-right: -15px;
+}
+
+/*SCORE BOX*/
+/* line 193, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#score {
+  position: absolute;
+  width: 400px;
+  padding: 30px;
+  background: #fff;
+  border: 2px solid #b21834;
+  border-radius: 10px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 200px;
+  z-index: 10;
+}
+/* line 206, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#score h2 {
+  margin-top: 0;
+}
+/* line 207, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#score p {
+  margin: 15px 0;
+}
+/* line 209, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+#score .nav-links {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+/* HIGH SCORES */
+/* line 218, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+table {
+  width: 500px;
+  margin: auto;
+  border: 1px solid #b21834;
+  border-collapse: collapse;
+}
+
+/* line 219, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+th, td {
+  padding: 8px 12px;
+}
+
+/* line 221, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+thead {
+  color: #fff;
+  background: #b21834;
+}
+
+/* line 223, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+tr.even {
+  background: #eee;
+}
+
+/* line 225, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+td.sname, th.sname {
+  text-align: left;
+}
+
+/* line 226, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+td.stime, th.stime {
+  text-align: center;
+}
+
+/* FOOTER */
+/* line 231, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+footer {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 12px;
+  color: #999;
+  clear: both;
+  text-align: center;
+}
+/* line 239, /Users/jessahafer-zdral/Documents/Homework/odin/js/wheres-waldo/app/assets/stylesheets/custom.css.scss */
+footer a {
+  color: #999;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
