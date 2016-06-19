@@ -27,7 +27,7 @@ var puzzle = (function(){
 			  	} else {
 			  		showMessage("You found "+result.c.name+"!");
 			  		flagAsFound(result.c);
-			  		if (result.score) showScore(result.score);
+			  		if (result.score) showScore();
 			  	}
 			  	$('.select').hide();
 			 });
@@ -52,7 +52,7 @@ var puzzle = (function(){
 		$('.msg').css({top: clickY+50, left: clickX }).fadeIn('fast');
 	}
 
-	function showScore(score) {
+	function showScore() {
 		$('.popup').hide();
 		$('<div id="score"></div>').prependTo('#board').hide().fadeIn('fast');
 		var pid = window.location.pathname.replace(/\/$/, '').split("/").pop()

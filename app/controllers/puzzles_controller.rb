@@ -15,7 +15,7 @@ class PuzzlesController < ApplicationController
 		if @char.is_at_coord?(params[:x],params[:y])
 			session[:to_find].delete(@char.id)
 			calc_score if solved?
-			render json: { c: @char.position_data, score: session[:score] }
+			render json: { c: @char.position_data, score: !!session[:score] }
 		else
 			render json: "false"
 		end
