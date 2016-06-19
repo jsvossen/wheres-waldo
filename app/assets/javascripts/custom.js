@@ -55,7 +55,7 @@ var puzzle = (function(){
 	function showScore(score) {
 		$('.popup').hide();
 		$('<div id="score"></div>').prependTo('#board').hide().fadeIn('fast');
-		var pid = window.location.pathname.split("/").pop()
+		var pid = window.location.pathname.replace(/\/$/, '').split("/").pop()
 		$.get({
 			url: '/post_score',
 			data: { id: pid },
